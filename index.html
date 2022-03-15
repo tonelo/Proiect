@@ -360,12 +360,13 @@ function shoppingHTML() {
     articleShop.forEach( curso =>{
         
         const row = document.createElement('tr');
+        const pricePerItem = curso.price.replace(/[^\d.-]/g, '');;
         row.innerHTML = `
             <td><img src="${curso.image}" width="100"></td>
             <td>${curso.title}</td>
             <td>${curso.price}</td>
             <td>${curso.amount}</td>
-            <td>${curso.price}</td> 
+            <td>${pricePerItem * curso.amount}</td> 
             <td><a href="#" class="deletebtn" data-id="${curso.id}">X</a></td>
             
         `;
